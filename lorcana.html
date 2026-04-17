@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<title>Lorcodex - Codex Lorcana</title>
+	<link rel="icon" href="favicon.png">
+
+	 <link href="lorcana.css" rel="stylesheet" />
+	 <style>
+	  body {
+	  background-image: url("Lorcanabackground.png");
+	  background-size: cover;
+	}
+	</style>
+
+
+ </head>
+<body>
+
+<div class="header">
+  <span class="titre">LorCodex</span>
+
+</div>
+
+   <h1 class="titre">Entrez dans l'univers Lorcana</h1>
+ 
+
+
+<div id="carousel">
+    <a id="image-link" href="spoilers.html" target="_blank">
+        <img id="image" src="invasionepineuse.jpg" alt="Image du carrousel" class="carousel-img"/>
+    </a>
+</div>
+
+
+<button onclick="previousImage()"> Actualité précédente</button>
+<button onclick="nextImage()"> Actualité suivante</button>
+<style>
+body {
+    text-align: center;
+	font-size: 125%;
+}
+</style>
+
+<script>
+
+const images = [
+	"invasionepineuse.jpg",
+    "wildsunknown.png",
+    "Winterspell.png",
+	"carte-promotionnelle-zootopie-2.png",
+	"puzzles.webp",
+];
+
+const links = [
+    "spoilers.html",
+	"https://www.disneylorcana.com/fr-FR/product/wilds-unknown",
+    "https://www.disneylorcana.com/fr-FR/product/winterspell",
+	"https://www.disneylorcana.com/fr-FR/promo-card",
+    "https://www.disneylorcana.com/fr-FR/news_/2025_/10_/2025-10_release-notes",
+];
+
+let index = 0;
+
+function updateCarousel() {
+    document.getElementById("image").src = images[index];
+    document.getElementById("image-link").href = links[index];
+}
+
+function nextImage() {
+    index = (index + 1) % images.length;
+    updateCarousel();
+}
+
+function previousImage() {
+    index = index - 1;
+    if (index < 0) index = images.length - 1;
+    updateCarousel();
+}
+
+</script>
+
+
+<img src="text_separator.png" 
+     alt="Logo Lorcana" 
+     style="width: 100%; display: block;"/>
+
+
+ <div class="boxcontainer">
+        <div class="box">
+           <p> Lorcana est un jeu de cartes à collectioner (Trading Card Game) développé par Disney en collaboration avec Ravensburger. 
+				Pour comprendre le fonctionnement du jeu je vous invite à aller voir la page dédiée ci dessous. </p>
+				<p> Vous incarnez ici un Illumineur, Gardien du royaume de Lorcana. Vous pourrez jouer des "Glimmers", ce sont des personnages de la licence Disney tels que : Mickey, Olaf, Mushu, Robin des Bois, Kronk, Jasmine, Gaston et bien d'autres, Héros comme Villains...</p>
+				<p> Ces personnages que vous jouez sous forme de cartes ont une couleur qui les définit par le type de jeu, cette couleur s'appelle une Encre. </p>
+				<p> Il y en a 6 : Ambre, Améthyste, Émeraude, Rubis, Saphir et Acier.</p> 
+				<img src="lorcana_encres.webp"  
+     alt="Encres Lorcana" 
+     style="width: 25%; display: block; margin: 25px auto;"/>
+				<p> Un compteur de Lore (objectif du jeu) est mis à votre disposition aussi bien pour ordinateur que pour téléphone. </p>
+        </div>
+    </div>
+
+
+
+<img src="text_separator.png" 
+     alt="Logo Lorcana" 
+     style="width: 100%; display: block;"/>
+
+
+<div class="video-container">
+    <iframe 
+        src="https://www.youtube.com/embed/74nOdRwf92c"
+        title="The Story Begins (Disney Lorcana TCG Teaser)"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<img src="text_separator.png" 
+     alt="Logo Lorcana" 
+     style="width: 100%; display: block;"/>
+
+<!-- Boutons -->
+<div class="menu-container">
+  <a class="menu-bouton" href="chapitre_1.html">Cartes Premier Chapitre</a>
+  <a class="menu-bouton" href="règles.html">Règles du jeu</a>
+  <a class="menu-bouton" href="compteur_de_lore.html">Compteur de Lore</a>
+  <a class="menu-bouton" href="artworks.html">Artworks</a>
+</div>
+
+
+
+
+</body>
+
+<footer>
+    <img style="width: 20%;" src="lorcanalogo.png" alt="Logo Lorcana"/>
+    <p style="font-size: 120%;">Lorcana est une licence appartenant à Ravensburger et à Disney</p>
+
+    <a class="btn-officiel" href="https://www.disneylorcana.com/fr-FR/" target="_blank">
+        Site Officiel
+    </a> 
+</footer>
+
+
+</html>
