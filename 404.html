@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erreur 404</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: url("wallpaper.png") no-repeat center center/cover;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 25px;
+        align-items: center;
+    }
+
+    /* MAP (gauche) */
+    .map {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        display: flex;
+        justify-content: center;
+    }
+
+    .map img {
+        width: 95%;
+        max-width: 420px;
+    }
+
+    /* ERREUR 404 */
+    .error404 {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .error404 img {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    /* CITATION */
+    .quote {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .quote img {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    /* BOUTON RETOUR */
+    .home {
+        grid-column: 2;
+        grid-row: 3;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home a {
+    background: url("Lorcanabackground.png") no-repeat center/cover;
+    width: 420px;        /* plus grand */
+    height: 75px;        /* plus grand */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 20px; /* arrondi des angles */
+}
+
+
+    /* --------- RESPONSIVE MOBILE --------- */
+    @media (max-width: 800px) {
+        .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto;
+        }
+
+        .map {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .error404, .quote, .home {
+            grid-column: 1;
+        }
+
+        .error404 img, .quote img {
+            width: 95%;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="map">
+            <img src="map.png" alt="Nick et la carte">
+        </div>
+
+        <div class="error404">
+            <img src="error_404.png" alt="Erreur 404">
+        </div>
+
+        <div class="quote">
+            <img src="raiponce.png" alt="Citation Raiponce">
+        </div>
+
+        <div class="home">
+            <a href="index.html">Retour à l'accueil</a>
+        </div>
+    </div>
+</body>
+</html>

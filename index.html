@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Portfolio - Quentin Dubos</title>
+<link rel="icon" href="favicon.png">
+<link href="style.css" rel="stylesheet" />
+
+ <style>
+	  body {
+	  background-image: url("Lorcanabackground.png");
+	  background-size: cover;
+	}
+	</style>
+
+<style>
+body {
+    text-align: center;
+	font-size: 125%;
+}
+</style>
+
+</head>
+
+<body>
+
+		<header id="navbar" class="nav">
+			<a style="margin-left: 2%; margin-right: 2%;;" href="index.html">Accueil</a>
+			<div class="dropdown-1">
+					<button>Liste Funko Pop</button>
+					<div class="content">
+					<a href="https://quentwax.github.io/Liste-pop/">Site</a>
+					<a href="wwfp.html">What & Why</a>
+					</div>
+				</div>
+				
+				<div class="dropdown-1">
+					<button>Lorcodex</button>
+					<div class="content">
+					<a href="lorcana.html">Site</a>
+					<a href="whylorcana.html">What & Why</a>
+					</div>
+				</div>
+			
+			
+				<div class="dropdown-1">
+					<button>Fortnite</button>
+					<div class="content">
+					<a href="fortnite.html">Site</a>
+					<a href="wwf.html  ">What & Why</a>
+					</div>
+				</div>
+		
+				<a href="apps.html">Apps codées</a>
+				
+			<a class="icon" onclick="myFunction()">&#9776;</a>
+		</header>
+		
+		<script>
+            function myFunction() {
+                var x = document.getElementById("navbar");
+                if (x.className === "nav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "nav";
+                }
+            }
+</script>
+
+   <h1 class="titre">Portfolio - Quentin Dubos</h1>
+ 
+
+
+<div id="carousel">
+    <a id="image-link" href="https://www.cesi.fr/" target="_blank">
+        <img id="image" src="cesi.jpg" alt="Image du carrousel" class="carousel-img"/>
+    </a>
+</div>
+
+
+<button class="actu" onclick="previousImage()"> Page précédente</button>
+<button class="actu" onclick="nextImage()"> Page suivante</button>
+
+
+<script>
+
+const images = [
+	"cesi.jpg",
+    "funkopoplogo.png",
+    "lorcanalogo.png",
+	"fortnite.jpg",
+];
+
+const links = [
+    "https://www.cesi.fr/",
+	"https://quentwax.github.io/Liste-pop/",
+    "lorcana.html",
+	"fortnite.html",
+];
+
+let index = 0;
+
+function updateCarousel() {
+    document.getElementById("image").src = images[index];
+    document.getElementById("image-link").href = links[index];
+}
+
+function nextImage() {
+    index = (index + 1) % images.length;
+    updateCarousel();
+}
+
+function previousImage() {
+    index = index - 1;
+    if (index < 0) index = images.length - 1;
+    updateCarousel();
+}
+
+</script>
+
+	<div class="boxcontainer">
+        <div class="box">
+           <p> Je me présente, je m'appelle Quentin Dubos, lycéen en STI2D à Ferdinand Buisson (Elbeuf 76500). Je souhaiterai poursuivre mon parcours scolaire à l'école du CESI de St Étienne du Rouvray. Je suis passionné par la technologie, le codage et la création de sites web.
+			<br><br>
+			Ce site est un Portfolio qui consiste à montrer tous mes projets et exposer mes sites. Sur cette page d'accueil, vous trouverez une
+			présentation de tous mes travaux : Sites web et applications mobiles. </p>
+        </div>
+    </div>
+
+
+	<audio id="bg-music" loop>
+    <source src="mario_galaxy_soundtrack.mp3" type="audio/mpeg">
+</audio>
+
+<div id="audio-controls" class="collapsed">
+    <button id="toggle-btn">🎵</button>
+    <button id="mute-btn">🔇</button>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+</div>
+
+<script>
+const music = document.getElementById("bg-music");
+const muteBtn = document.getElementById("mute-btn");
+const toggleBtn = document.getElementById("toggle-btn");
+const slider = document.getElementById("volume-slider");
+const controls = document.getElementById("audio-controls");
+
+let started = false;
+
+// volume initial
+music.volume = slider.value;
+
+// ouvrir / fermer
+toggleBtn.addEventListener("click", () => {
+    controls.classList.toggle("collapsed");
+});
+
+// ✅ MUTE / UNMUTE FIX
+muteBtn.addEventListener("click", () => {
+
+    // 1er clic → lancer + UNMUTE direct
+    if (!started) {
+        music.muted = false;   // 🔥 important AVANT play
+        music.play();
+        started = true;
+    } else {
+        music.muted = !music.muted;
+    }
+
+    updateUI();
+});
+
+// volume
+slider.addEventListener("input", () => {
+    music.volume = slider.value;
+
+    if (!started) {
+        music.muted = false;
+        music.play();
+        started = true;
+    }
+
+    updateUI();
+});
+
+function updateUI() {
+    if (music.muted || music.volume == 0) {
+        muteBtn.textContent = "🔇";
+    } else {
+        muteBtn.textContent = "🔊";
+    }
+}
+
+</script>
+
+</body>
+
+<footer>
+    <img style="width: 10%;" src="logo_quentwax.png" alt="Logo Lorcana"/>
+    <p style="font-size: 120%;">Pour me contacter :</p>
+
+<br>
+
+		<a class="socials" href="https://mail.google.com/mail/?view=cm&to=quentwax76@gmail.com" target="_blank"> 
+   			<img src="logo_gmail.png" alt="Envoyer un mail">
+		</a>
+	
+		<a class="socials" href="https://www.facebook.com/profile.php?id=100077318054317&locale=fr_FR" target="_blank">
+		   	 <img src="logo_facebook.png" alt="Logo Facebook">
+		</a>
+
+		<a class="socials" href="https://www.instagram.com/quentwax?igsh=c2g2cnNoM3lha2dz" target="_blank">
+		    <img src="logo_insta.png" alt="Logo Instagram">
+		</a>
+</footer>
+
+
+</html>

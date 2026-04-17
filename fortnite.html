@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="fortnite.css" rel="stylesheet" />
+
+<title>Site Fortnite</title>
+<link rel="icon" href="F_logo.png">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <h1 class="site-title">Site Fortnite</h1>
+
+    <div class="header-buttons">
+        <a href="map.html" class="header-btn">Map</a>
+        <a href="https://www.fortnite.com/item-shop?lang=fr#daftfriedrice" class="header-btn">Boutique</a>
+    </div>
+</div>
+
+<!-- CARROUSEL -->
+<div id="carousel">
+    <a id="image-link" href="https://www.fortnite.com/item-shop?lang=fr#daftfriedrice" target="_blank">
+        <img id="image" src="shop.jpg" alt="Image du carrousel" class="carousel-img"/>
+    </a>
+</div>
+
+<button onclick="previousImage()">Actualité précédente</button>
+<button onclick="nextImage()">Actualité suivante</button>
+
+<script>
+const images = [
+    "shop.jpg",
+    "c7.jpg",
+    "solo.jpg",
+];
+
+const links = [
+    "https://www.fortnite.com/item-shop?lang=fr#daftfriedrice",
+    "https://www.fortnite.com/news/fortnite-battle-royale-chapter-seven-pacific-break-v39-00-update-notes?lang=fr",
+    "https://www.fortnite.com/item-shop/offers/solo-levelingarise-bundle-bf68c9e7?lang=fr",
+];
+
+let index = 0;
+
+function updateCarousel() {
+    document.getElementById("image").src = images[index];
+    document.getElementById("image-link").href = links[index];
+}
+
+function nextImage() {
+    index = (index + 1) % images.length;
+    updateCarousel();
+}
+
+function previousImage() {
+    index = index - 1;
+    if (index < 0) index = images.length - 1;
+    updateCarousel();
+}
+</script>
+
+
+<div class="boxcontainer">
+        <div class="box">
+           <p> Le principe de la Battle Royale de Fortnite est simple. 100 joueurs sont parachutés sur une île et doivent s'affronter à mort, jusqu'à
+		   ce qu'il ne reste qu'un seul survivant, qui remporte alors la partie. Au départ, les joueurs ne disposent d'aucun équipement.</p> 
+				
+        </div>
+    </div>
+
+
+<footer>
+    <img style="width: 20%;" src="fortnite.jpg" alt="Logo Fortnite"/>
+    <p style="font-size: 120%;">Fortnite est un jeu créé par ®Epic Games</p>
+
+    <a class="btn-officiel" href="https://www.fortnite.com/?lang=fr" target="_blank">
+        Site Officiel
+    </a> 
+</footer>
+
+</body>
+</html>
